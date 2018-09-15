@@ -24,7 +24,7 @@
                         <form action="./Logar" method="post">
                             <img src="images\procedence3.png" width="200" height="100">
                             <div>
-                                <input type="text" name="user" id="user" class="form-control" placeholder="Usuário" required="" />
+                                <input type="text" name="user" id="user" class="form-control" placeholder="Usuário do Estoque" required="" />
                             </div>
                             <div>
                                 <input type="password" name="senha" id="senha" class="form-control" placeholder="Senha" required="" />
