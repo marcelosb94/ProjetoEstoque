@@ -41,6 +41,7 @@
                     <ul class="nav child_menu">
 
                       <li><a href="usuario.jsp">Usuário</a></li>
+                      <li><a href="fornecedor.jsp">Fornecedor</a></li>
                     </ul>
                   </li>
                   
