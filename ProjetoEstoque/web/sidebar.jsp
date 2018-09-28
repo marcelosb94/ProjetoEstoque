@@ -45,6 +45,13 @@
                     </ul>
                   </li>
                   
+                  <li><a><i class="fa fa-table"></i> RELATORIOS <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+
+                      <li><a href="rel_usuario.jsp">Relatorios Usuário</a></li>
+                      
+                    </ul>
+                  </li>
                   
                   <li><a href="./Sair"><i class="fa fa-power-off"></i> SAIR </a>
                     
