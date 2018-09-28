@@ -42,6 +42,7 @@ public class UsuarioDAO {
             while (rs.next()) {
                 UsuarioBean userBean = new UsuarioBean();
                 
+                userBean.setId(rs.getInt("id"));
                 userBean.setNome(rs.getString("nome"));/**Nome,Cargo,Setor,Email,Senha**/
                 userBean.setCargo(rs.getString("cargo"));
                 userBean.setSetor(rs.getString("email"));
@@ -59,15 +60,15 @@ public class UsuarioDAO {
         return listUser;
     }
 
-    public void cadastrar(UsuarioBean aluno) {
+    public void cadastrar(UsuarioBean usuario) {
         String sql = "insert into usuario(nome,senha,cargo,setor,email) values(?,?,?,?,?)";
         try {                                                       /**Nome,Cargo,Setor,Email,Senha**/
             PreparedStatement ps = con.prepareStatement(sql);
-            ps.setString(1, aluno.getNome());
-            ps.setString(2, aluno.getPwd());
-            ps.setString(3, aluno.getCargo());
-            ps.setString(4, aluno.getSetor());
-            ps.setString(5, aluno.getEmail());
+            ps.setString(1, usuario.getNome());
+            ps.setString(2, usuario.getPwd());
+            ps.setString(3, usuario.getCargo());
+            ps.setString(4, usuario.getSetor());
+            ps.setString(5, usuario.getEmail());
             
             ps.executeUpdate();
             ps.close();
@@ -96,5 +97,38 @@ public class UsuarioDAO {
         return false;
     }
     
+        public void alterar(UsuarioBean usuario) {
+        String sql = "UPDATE usuario set nome=?,senha=?,cargo=?,setor=?,email=? where cod=?";
+        try {                                                       /**Nome,Cargo,Setor,Email,Senha**/
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setString(1, usuario.getNome());
+            ps.setString(2, usuario.getPwd());
+            ps.setString(3, usuario.getCargo());
+            ps.setString(4, usuario.getSetor());
+            ps.setString(5, usuario.getEmail());
+            ps.setInt(6, usuario.getId());
+            
+            ps.executeUpdate();
+            ps.close();
+            con.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        }
+        public boolean deletar(UsuarioBean usuario){
+        String sql = "DELETE usuario set where cod=?";
+        try {                                                       /**Nome,Cargo,Setor,Email,Senha**/
+            PreparedStatement ps = con.prepareStatement(sql);
+            
+            ps.setInt(1, usuario.getId());
+            
+            ps.executeUpdate();
+            ps.close();
+            con.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+            return false;
+        }
     
 }

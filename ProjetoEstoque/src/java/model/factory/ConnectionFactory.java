@@ -17,16 +17,13 @@ import java.util.logging.Logger;
  */
 public class ConnectionFactory {
    /** private final String url_conexao = "jdbc:mysql://localhost/system_jsp";*/
-    /**private final String url_conexao = "jdbc:mysql://localhost/projeto_estoque";*/
-    private final String url_conexao = "jdbc:mysql://127.0.0.1:50728/localdb";
-   /** connectionString = "jdbc:mysql://" + host + ":3306/" + database; //string de conexao*/
+    private final String url_conexao = "jdbc:mysql://localhost/projeto_estoque";
+    /**private final String url_conexao = "jdbc:mysql://127.0.0.1:50728/localdb";*/
    
-    
-
-    /**private final String usuario = "root";*/
-    private final String usuario = "azure";
-    /*private final String senha = "";*/
-    private final String senha = "6#vWHD_$";
+    private final String usuario = "root";
+   /** private final String usuario = "azure";*/
+    private final String senha = "";
+    /**private final String senha = "6#vWHD_$";*/
     private Connection conexao = null;
 
     public Connection getConnection() {
@@ -36,11 +33,11 @@ public class ConnectionFactory {
         } catch (SQLException ex) {
             Logger.getLogger(ConnectionFactory.class.getName()).log(Level.SEVERE, null, ex);
             System.out.println("Falha ao se conectar ao banco (ConnectionFactory): " + ex.getMessage());
-            throw new RuntimeException("Erro em ConnectionFactory!", ex);
+            throw new RuntimeException("Erro em ConnectionFactory!!", ex);
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(ConnectionFactory.class.getName()).log(Level.SEVERE, null, ex);
             System.out.println("Classe não encontrada (ConnectionFactory): " + ex.getMessage());
-            throw new RuntimeException("Erro em ConnectionFactory!", ex);
+            throw new RuntimeException("Erro em ConnectionFactory!!", ex);
         }
         return conexao;
     }
