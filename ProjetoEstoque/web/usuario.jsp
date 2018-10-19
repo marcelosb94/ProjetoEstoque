@@ -11,8 +11,9 @@
                 <%@include file="topmenu.jsp"%>
                 <%@include file="view/v_usuario.jsp"%>
                 <%@include file="footer.jsp"%>
-                <%@include file="script.jsp"%>
+                
             </div>
+                <%@include file="script.jsp"%>
         </div>
     </body>
 </html>

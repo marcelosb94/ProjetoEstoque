@@ -9,6 +9,10 @@
     <link href="css/nprogress.css" rel="stylesheet">
 
     <!-- Custom Theme Style -->
-    <link href="css/custom.min.css" rel="stylesheet">    
+    <link href="css/custom.min.css" rel="stylesheet"> 
+    
+    <link rel="stylesheet" type="text/css" href="css/datatables.min.css"/>
+    
+    <link rel="stylesheet" type="text/css" href="css/datatables.css"/>
     
        

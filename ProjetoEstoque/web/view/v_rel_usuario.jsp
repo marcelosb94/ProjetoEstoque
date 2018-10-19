@@ -5,8 +5,8 @@
     pageEncoding="ISO-8859-1"%>
 <!-- page content -->
 <link rel="stylesheet" type="text/css" href="css/datatables.min.css"/>
-    
-    <link rel="stylesheet" type="text/css" href="css/datatables.css"/>
+ 
+<link rel="stylesheet" type="text/css" href="css/datatables.css"/>
        
 
      <script src="js/datatables.min.js"></script>
@@ -18,40 +18,34 @@
             
      </script>
 
-
-
-<div class="right_col" role="main">
+<div class="right_col" role="main"> 
     <div class="">
         <div class="page-title">
             <div class="title_left">
                 <h3>Relatorio de Usuarios Cadastrados</h3>
             </div>
         </div>
-
         <div class="clearfix"></div>
-    <%
+ <%
         UsuarioDAO usuario = new UsuarioDAO();      
         List<UsuarioBean> listausuario;
         listausuario = usuario.buscarTodosUsuarios();
             
-            %>
- 
-<table id ="table_id" class="table table-striped table-bordered">
+ %>
+<!--table table-striped table-bordered--> 
+<table id="table_id" class="table table-striped table-bordered">
     <thead>
         <tr>
-		
                 <th>Nome Usuario</th>
                 <th>Cargo </th>
                 <th>Setor</th>
                 <th>Email</th>
                 <th>Senha</th>
-                <th colspan="2" >Ação</th>
-        </tr>        
-           
+                <th colspan="1" >Ação</th>
+                <th colspan="1" >Ação</th>
+        </tr>
     </thead>
-
-    <tbody>
-    
+    <tbody>    
         <tr>
  <%
 for(UsuarioBean usuariobean: listausuario){    
@@ -60,20 +54,15 @@ for(UsuarioBean usuariobean: listausuario){
             <td><%=usuariobean.getCargo() %></td>
             <td><%=usuariobean.getSetor() %></td>
             <td><%=usuariobean.getEmail() %></td>
-            <td><%=usuariobean.getPwd() %></td>
-            <td><a href="Usuario?cod=<%=usuariobean.getId()%>">Alterar</a></td><td><a href="Usuario.java?cod=<%=usuariobean.getId()%>">Excluir</a></td>
-
+            <td type="password"><%=usuariobean.getPwd() %></td>
+            <td><a href="atu_usuario.jsp?id=<%=usuariobean.getId()%>" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Alterar</a></td><td><a href="ExcluirUsuario.jsp?id=<%=usuariobean.getId()%> "class="btn btn-danger btn-xs" onclick="alert('Excluido Com Sucesso!')" ><i class="fa fa-trash-o"></i> Excluir</a></td>
+         <!--   <td><a href="atu_usuario.jsp?id=<%=usuariobean.getId()%>">Alterar</a></td><td><a href="ExcluirUsuario.jsp?id=<%=usuariobean.getId()%>">Excluir</a></td>-->
         </tr>
                <%
 	}
       %>
     </tbody>
-
-     
 </table>
-               
-                        
-                    </div>
-                </div>
-
+</div>
+</div>
 <!-- /page content -->

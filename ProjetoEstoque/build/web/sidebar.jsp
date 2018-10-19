@@ -40,8 +40,9 @@
                   <li><a><i class="fa fa-edit"></i> CADASTRO <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
 
-                      <li><a href="usuario.jsp">Usuário</a></li>
-                      <li><a href="fornecedor.jsp">Fornecedor</a></li>
+                      <li><a href="usuario.jsp">Usuários</a></li>
+                      <li><a href="fornecedor.jsp">Fornecedores</a></li>
+                      <li><a href="produto.jsp">Produtos</a></li>
                     </ul>
                   </li>
                   
@@ -49,6 +50,7 @@
                     <ul class="nav child_menu">
 
                       <li><a href="rel_usuario.jsp">Relatorios Usuário</a></li>
+                      <li><a href="rel_fornecedor.jsp">Relatorios de Fornecedores</a></li>
                       
                     </ul>
                   </li>

@@ -45,7 +45,7 @@ public class UsuarioDAO {
                 userBean.setId(rs.getInt("id"));
                 userBean.setNome(rs.getString("nome"));/**Nome,Cargo,Setor,Email,Senha**/
                 userBean.setCargo(rs.getString("cargo"));
-                userBean.setSetor(rs.getString("email"));
+                userBean.setSetor(rs.getString("setor"));
                 userBean.setEmail(rs.getString("email"));
                 userBean.setPwd(rs.getString("senha"));              
                 
@@ -96,9 +96,9 @@ public class UsuarioDAO {
         }
         return false;
     }
-    
+    //Atualizar cadastro
         public void alterar(UsuarioBean usuario) {
-        String sql = "UPDATE usuario set nome=?,senha=?,cargo=?,setor=?,email=? where cod=?";
+        String sql = "UPDATE usuario SET nome=?,senha=?,cargo=?,setor=?,email=? WHERE id=?";
         try {                                                       /**Nome,Cargo,Setor,Email,Senha**/
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setString(1, usuario.getNome());
@@ -115,20 +115,55 @@ public class UsuarioDAO {
             Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
         }
+        //Deletar usuario
         public boolean deletar(UsuarioBean usuario){
-        String sql = "DELETE usuario set where cod=?";
+        String sql = "DELETE FROM usuario WHERE id=?";
         try {                                                       /**Nome,Cargo,Setor,Email,Senha**/
             PreparedStatement ps = con.prepareStatement(sql);
             
             ps.setInt(1, usuario.getId());
             
-            ps.executeUpdate();
+            ps.execute();
             ps.close();
             con.close();
+            System.out.println("Usuario excluido");
         } catch (SQLException ex) {
             Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
-            return false;
+            return true;
         }
+        
+        
+        public UsuarioBean buscar(UsuarioBean usuario) {        
+        String sql = "SELECT * FROM usuario WHERE id=?";        
+        //UsuarioBean usuariob = new UsuarioBean();
+        UsuarioBean usuariob = null;
+        
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setInt(1, usuario.getId());
+            ResultSet rs = ps.executeQuery();
+            
+            if (rs.next()) {                
+                usuariob = new UsuarioBean();                
+                usuariob.setId(rs.getInt("id"));
+                usuariob.setNome(rs.getString("nome"));
+                usuariob.setCargo(rs.getString("cargo"));
+                usuariob.setSetor(rs.getString("setor"));
+                usuariob.setEmail(rs.getString("email"));
+                usuariob.setPwd(rs.getString("senha"));              
+                
+            }
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return usuariob;
+       // return usuariob.find(UsuarioBean.class, usuario);
+    }
+
+        
+        
+        
     
 }
