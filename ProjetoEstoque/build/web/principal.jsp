@@ -13,8 +13,7 @@
                 <%@include file="footer.jsp"%>
 
             </div>
-                <%@include file="script.jsp"%>
-                
+                <%@include file="script.jsp"%>                
         </div>
     </body>
 </html>

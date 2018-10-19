@@ -13,7 +13,7 @@
                 <%@include file="view/v_rel_usuario.jsp"%>
                 <%@include file="footer.jsp"%>
                 <%@include file="script.jsp"%>
-            </div>
+            </div>         
         </div>
     </body>
 </html>

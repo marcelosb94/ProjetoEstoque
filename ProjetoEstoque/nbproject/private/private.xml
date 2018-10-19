@@ -3,9 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Marcelo/Documents/GitHub/ProjetoEstoque/ProjetoEstoque/web/view/v_rel_usuario.jsp</file>
-            <file>file:/C:/Users/Marcelo/Documents/GitHub/ProjetoEstoque/ProjetoEstoque/src/java/model/factory/ConnectionFactory.java</file>
-            <file>file:/C:/Users/Marcelo/Documents/GitHub/ProjetoEstoque/ProjetoEstoque/web/sidebar.jsp</file>
+            <file>file:/C:/Users/Marcelo/Documents/GitHub/ProjetoEstoque/ProjetoEstoque/src/java/model/dao/UsuarioDAO.java</file>
         </group>
     </open-files>
 </project-private>

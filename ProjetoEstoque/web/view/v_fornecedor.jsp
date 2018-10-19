@@ -52,7 +52,7 @@
                       <span class="section">Informações do Fornecedor</span>
 
                       <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Nome Fornecedor<span class="required">*</span>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="nome">Nome Fornecedor<span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                           <input id="nome" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="nome" required="required" type="text">
@@ -60,7 +60,7 @@
                       </div>
                       
                       <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="number">Endereço <span class="required">*</span>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="endereco">Endereço <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                           <input type="endereco" id="endereco" name="endereco" required="required"  class="form-control col-md-7 col-xs-12">
@@ -76,7 +76,7 @@
                       </div>
                       
                      <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Inscrição Instadual<span class="required">*</span>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="inscricao">Inscrição Instadual<span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                           <input id="inscricao" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="inscricao" required="required" type="text">
@@ -99,7 +99,7 @@
                       </div>
                       
                                <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Nome Fantasia<span class="required">*</span>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="nome_fanta">Nome Fantasia<span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                           <input id="nome_fanta" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="nome_fanta" required="required" type="text">

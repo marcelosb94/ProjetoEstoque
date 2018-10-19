@@ -21,27 +21,18 @@ import model.dao.UsuarioDAO;
  */
 @WebServlet(name = "Usuario", urlPatterns = {"/Usuario"})
 public class Usuario extends HttpServlet{
-    
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
 
         try (PrintWriter out = response.getWriter()) {
             String funcao = request.getParameter("funcao");
-
-            UsuarioDAO usuario = new UsuarioDAO();
+           
 
             if (funcao.equals("cadastrar")) {
-
+                UsuarioDAO usuario = new UsuarioDAO();
+                
                 String nome = request.getParameter("nome");
                 String pwd = request.getParameter("senha");
                 String cargo = request.getParameter("cargo");
@@ -59,7 +50,23 @@ public class Usuario extends HttpServlet{
                 usuario.cadastrar(usuarioBean);                
                 response.sendRedirect("usuario.jsp");
             }
-
+            
+            if (funcao.equals("alterar")) {
+                
+                UsuarioBean usuarioBean = new UsuarioBean();
+                
+                usuarioBean.setId(Integer.parseInt(request.getParameter("id")));
+                usuarioBean.setNome(request.getParameter("nome"));
+                usuarioBean.setPwd(request.getParameter("senha"));
+                usuarioBean.setCargo(request.getParameter("cargo"));
+                usuarioBean.setSetor(request.getParameter("setor"));
+                usuarioBean.setEmail(request.getParameter("email"));
+                
+                UsuarioDAO usuariodao = new UsuarioDAO();
+                
+                usuariodao.alterar(usuarioBean);                
+                response.sendRedirect("rel_usuario.jsp");
+            }
         }
 
     }
