@@ -17,13 +17,13 @@ import java.util.logging.Logger;
  */
 public class ConnectionFactory {
    /** private final String url_conexao = "jdbc:mysql://localhost/system_jsp";*/
-    private final String url_conexao = "jdbc:mysql://localhost/projeto_estoque";
-    /**private final String url_conexao = "jdbc:mysql://127.0.0.1:50728/localdb";*/
+    /**private final String url_conexao = "jdbc:mysql://localhost/projeto_estoque";*/
+    private final String url_conexao = "jdbc:mysql://127.0.0.1:50728/localdb";
    
-    private final String usuario = "root";
-    /**private final String usuario = "azure";*/
-    private final String senha = "";
-    /**private final String senha = "6#vWHD_$";*/
+   /** private final String usuario = "root";*/
+    private final String usuario = "azure";
+    /**private final String senha = "";*/
+    private final String senha = "6#vWHD_$";
     private Connection conexao = null;
     //private final String port = "50728";
 
