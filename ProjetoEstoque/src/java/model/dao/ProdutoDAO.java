@@ -27,7 +27,7 @@ public class ProdutoDAO {
         this.con = new ConnectionFactory().getConnection();
     }
     
-    public List<ProdutoBean> buscarTodosUsuarios() {
+    public List<ProdutoBean> buscarTodos() {
         
         String sql = "SELECT * FROM produto";
         
@@ -42,11 +42,11 @@ public class ProdutoDAO {
                 ProdutoBean produtoBean = new ProdutoBean();
                 
                 produtoBean.setId(rs.getInt("id"));
-                produtoBean.setNome_produto("nome_produto");
-                produtoBean.setCategoria_produto("categoria_produto");
-                produtoBean.setPreco_produto("preco_produto");
-                produtoBean.setQtd_produto("qtd_produto");
-                produtoBean.setPonto_critico("ponto_critico");
+                produtoBean.setNome_produto(rs.getString("nome_produto"));
+                produtoBean.setCategoria_produto(rs.getString("categoria_produto"));
+                produtoBean.setPreco_produto(rs.getString("preco_produto"));
+                produtoBean.setQtd_produto(rs.getString("qtd_produto"));
+                produtoBean.setPonto_critico(rs.getString("ponto_critico"));
                                             
                 
                 listProduto.add(produtoBean);
@@ -128,7 +128,7 @@ public class ProdutoDAO {
             ResultSet rs = ps.executeQuery();
             
             if (rs.next()) {                
-                produto = new ProdutoBean();                
+                produtop = new ProdutoBean();                
                 produtop.setId(rs.getInt("id"));
                 produtop.setNome_produto(rs.getString("nome_produto"));
                 produtop.setCategoria_produto(rs.getString("categoria_produto"));

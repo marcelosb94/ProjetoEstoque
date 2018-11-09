@@ -17,6 +17,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import model.bean.UsuarioBean;
 import model.dao.UsuarioDAO;
 
 
@@ -48,6 +49,12 @@ public class Logar extends HttpServlet {
             HttpSession session = request.getSession();
 
             if (user.autenticar(login, senha)) {
+//                
+//                UsuarioDAO usuariod = new UsuarioDAO();
+//                UsuarioBean usuariob = usuariod.buscar(usuario,senha);
+//		
+//                String lusername = luser.getName() + " " + luser.getSurname();
+//                
                 response.sendRedirect("principal.jsp");
                 session.setAttribute("usuario", login);
                 session.setMaxInactiveInterval(60 * 10);
